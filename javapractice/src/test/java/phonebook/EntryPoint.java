@@ -1,7 +1,6 @@
 package phonebook;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EntryPoint {
@@ -9,11 +8,13 @@ public class EntryPoint {
 
   public static void main(String[] args) {
     // Create 10 contacts
-    addressBook.generateSpecificNumberOfContacts();
+    addressBook.generateSpecificNumberOfContacts(10);
 
     // Print contacts to console
     addressBook.printPhoneBook();
 
+    // Remove the 3rd and 8th contacts
+    addressBook.deleteContactByIndex();
 
 //    displayMenu();
 //    readUserInput();

@@ -10,13 +10,40 @@ public class AddressBook {
 
   /**
    * Method to generate a defined number of random contacts
+   *
+   * @param numberOfContactsToBeGenerated  number of contacts that will be generated
    */
-  public void generateSpecificNumberOfContacts() {
+  public void generateSpecificNumberOfContacts(int numberOfContactsToBeGenerated) {
     ContactGenerator contactGenerator = new ContactGenerator();
 
-    for (int i = 0; i < 10; i++) {
-      contactList.add(contactGenerator.generateRandomSingleContact());
+    for (int i = 0; i < numberOfContactsToBeGenerated; i++) {
+      Contact contact = contactGenerator.generateRandomSingleContact();
+      addNewContact(contact);
     }
+  }
+
+  /**
+   * Method to delete contact by its index
+   */
+  public void deleteContactByIndex() {
+
+    for (Contact contact : contactList) {
+      int contactIndex = contactList.indexOf(contact);
+      System.out.println("INDEXES: " + contactIndex);
+      System.out.println("list size: " + contactList.size());
+
+      if (contactIndex == 1) {
+        contactList.remove(contact);
+        System.out.println("list size after deletion " + contactList.size());
+      }
+    }
+  }
+
+  /**
+   * Method to add new single contact
+   */
+  public void addNewContact(Contact contact) {
+    contactList.add(contact);
   }
 
   /**
