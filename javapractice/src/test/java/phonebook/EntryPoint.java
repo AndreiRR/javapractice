@@ -10,11 +10,11 @@ public class EntryPoint {
     // Create 10 contacts
     addressBook.generateSpecificNumberOfContacts(10);
 
-    // Print contacts to console
-    addressBook.printPhoneBook();
-
     // Remove the 3rd and 8th contacts
     addressBook.deleteContactByIndex();
+
+    // Edit 10 th contact by change its email address
+    addressBook.editContactByEmailAddress();
 
 //    displayMenu();
 //    readUserInput();

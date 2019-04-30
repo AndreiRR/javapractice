@@ -26,15 +26,22 @@ public class AddressBook {
    * Method to delete contact by its index
    */
   public void deleteContactByIndex() {
+    for (int i = 1; i < contactList.size(); i++) {
+      contactList.remove(3);
+      contactList.remove(8);
+      break;
+    }
+  }
 
+  /**
+   * Method to edit contact by its email
+   */
+  public void editContactByEmailAddress() {
     for (Contact contact : contactList) {
       int contactIndex = contactList.indexOf(contact);
-      System.out.println("INDEXES: " + contactIndex);
-      System.out.println("list size: " + contactList.size());
-
-      if (contactIndex == 1) {
-        contactList.remove(contact);
-        System.out.println("list size after deletion " + contactList.size());
+      if (contactIndex == contactList.size() - 1) {
+        contact.setEmail("andrei.raschitorr@gmail.com");
+        printPhoneBook();
       }
     }
   }
